@@ -50,7 +50,8 @@ const ContactForm = () => {
         onChange={handleChange}
       />
       </label>
-      <button type="submit">Add Contact</button>
+      <button  className={styles.button} type="submit">Add contact</button>
+      {/* {error && <p className={styles.error}>{error}</p>} */}
     </form>
   );
 };
