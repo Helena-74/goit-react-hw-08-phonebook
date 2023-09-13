@@ -14,6 +14,8 @@ import { fetchContacts, addContacts, deleteContacts } from './operations';
     initialState: {
       items: [],
       isLoading: false,
+      autenticated: false,
+      token: null,
       error: null,
     },
   extraReducers: {
@@ -42,7 +44,7 @@ import { fetchContacts, addContacts, deleteContacts } from './operations';
   },
 });
 
-export const persistedContactsSlice = contactsSlice.reducer;
+export const authReducer = contactsSlice.reducer;
 
 
   

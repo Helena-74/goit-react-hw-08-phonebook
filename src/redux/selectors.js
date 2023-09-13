@@ -1,4 +1,4 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { createAction, createSelector } from "@reduxjs/toolkit";
 
 export const getContacts = state => state.contacts.items;
 export const getFilter = state => state.filter;
@@ -16,4 +16,16 @@ export const selectVisibleContacts = createSelector(
 
 export const selectFilter = (state) => state.filter;
 
+export const selectIsAuthenticated = (state) => state.auth.isAuthenticated;
+export const selectUser = (state) => state.auth.user;
+export const selectUserEmail = createSelector(
+  [selectUser],
+  (user) => user.email
+);
 
+
+const logoutUserAction = createAction('auth/logout');
+
+export const logoutUser = () => (dispatch) => {
+  dispatch(logoutUserAction());
+};
