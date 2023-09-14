@@ -1,6 +1,5 @@
 import { createAction, createSelector } from "@reduxjs/toolkit";
-import { Navigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 // import { selectUser, selectIsLoggedIn, selectIsRefreshing } from 'redux/selectors';
 
 export const getContacts = state => state.contacts.items;
@@ -37,28 +36,3 @@ export const logoutUser = () => (dispatch) => {
 };
 
 
-export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
-  const { isLoggedIn, isRefreshing } = useAuth();
-  const shouldRedirect = !isLoggedIn && !isRefreshing;
-
-  return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
-};
-
-export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
-  const { isLoggedIn } = useAuth();
-
-  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
-};
-
-
-export const useAuth = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isRefreshing = useSelector(selectIsRefreshing);
-  const user = useSelector(selectUser);
-
-  return {
-    isLoggedIn,
-    isRefreshing,
-    user,
-  };
-};

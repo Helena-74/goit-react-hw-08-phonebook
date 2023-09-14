@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
-import { useAuth } from 'redux/selectors';
 import styles from './App.module.css';
 import { Navigation } from 'config/routes';
 import UserMenu from './UserMenu/UserMenu';
 import { AuthNav } from './AuthNav/AuthNav';
+import { useAuth } from 'redux/useAuth';
 
 const AppBar = () => {
   const { isLoggedIn } = useAuth();

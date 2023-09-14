@@ -1,9 +1,8 @@
 import { lazy } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from 'redux/selectors';
 import styles from '../components/App.module.css';
+import { useAuth } from 'redux/useAuth';
 
-// const NotFound = lazy(() => import('../pages/NotFound'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
