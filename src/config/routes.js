@@ -1,4 +1,7 @@
 import { lazy } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useAuth } from 'redux/selectors';
+import styles from '../components/App.module.css';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -28,3 +31,21 @@ export const appRoutes = [
     element: <RegisterPage/>,
   },
 ];
+
+export const Navigation = () => {
+  const { isLoggedIn } = useAuth();
+
+  return (
+    <nav>
+      <NavLink className={styles.link} to="/">
+        Home
+      </NavLink>
+      {isLoggedIn && (
+        <NavLink className={styles.link} to="/tasks">
+          Phonebook
+        </NavLink>
+      )}
+    </nav>
+  );
+};
+
