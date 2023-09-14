@@ -57,6 +57,7 @@ const RegisterPage = () => {
 export default RegisterPage;
 
 
+
 // import React from 'react';
 // import { useDispatch } from 'react-redux';
 

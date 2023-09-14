@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from 'redux/selectors';
 import styles from '../components/App.module.css';
 
+// const NotFound = lazy(() => import('../pages/NotFound'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
@@ -37,11 +38,11 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <NavLink className={styles.link} to="/">
+      <NavLink className={styles.link} to="{HOME_ROUTE}">
         Home
       </NavLink>
       {isLoggedIn && (
-        <NavLink className={styles.link} to="/tasks">
+        <NavLink className={styles.link} to="{CONTACTS_ROUTE}">
           Phonebook
         </NavLink>
       )}

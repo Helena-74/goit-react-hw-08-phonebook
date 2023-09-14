@@ -1,7 +1,7 @@
 import { createAction, createSelector } from "@reduxjs/toolkit";
 import { Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
-// import { selectUser, selectIsLoggedIn, selectIsRefreshing } from 'redux/auth/selectors';
+// import { selectUser, selectIsLoggedIn, selectIsRefreshing } from 'redux/selectors';
 
 export const getContacts = state => state.contacts.items;
 export const getFilter = state => state.filter;

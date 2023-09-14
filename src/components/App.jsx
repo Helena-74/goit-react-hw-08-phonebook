@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { HOME_ROUTE, CONTACTS_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE } from 'config/routes';
+import { HOME_ROUTE, CONTACTS_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, appRoutes } from 'config/routes';
 import { PrivateRoute, RestrictedRoute } from 'redux/selectors';
 import { useAuth } from 'redux/selectors';
 import { refreshUser } from 'redux/operations';
 import { Layout } from './Layout';
 // import styles from './App.module.css';
 
-// const NotFound = lazy(() => import('../pages/NotFound'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 function App() {
   const dispatch = useDispatch();
@@ -43,16 +43,11 @@ function App() {
             <PrivateRoute redirectTo="/login" component={<CONTACTS_ROUTE />} />
           }
         />
+        {appRoutes.map(({path, element}) => < Route key={path} path={path} element={element} />)}
+        < Route path='*' element={<NotFound/>} /> 
       </Route>
     </Routes>
-
   );
-  // <main>
-  //   <Routes>
-  //     {appRoutes.map(({path, element}) => < Route key={path} path={path} element={element} />)}
-  //     < Route path='*' element={<NotFound/>} /> 
-  //   </Routes>
-  // </main>
 }
 
 export default App;
