@@ -26,19 +26,19 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HOME_ROUTE />} />
         <Route
-          path="/register"
+          path="{REGISTER_ROUTE}"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<REGISTER_ROUTE />} />
+            <RestrictedRoute redirectTo="/contacts" component={<REGISTER_ROUTE />} />
           }
         />
         <Route
-          path="/login"
+          path="{LOGIN_ROUTE}"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<LOGIN_ROUTE />} />
+            <RestrictedRoute redirectTo="/contacts" component={<LOGIN_ROUTE />} />
           }
         />
         <Route
-          path="/tasks"
+          path="{CONTACTS_ROUTE}"
           element={
             <PrivateRoute redirectTo="/login" component={<CONTACTS_ROUTE />} />
           }
@@ -87,7 +87,7 @@ export default App;
   //     <nav className={styles.nav} >
   //       <NavLink to={HOME_ROUTE}>Home</NavLink>
   //       <NavLink to={CONTACTS_ROUTE}>Phonebook</NavLink>
-  //       <NavLink to={REGISTER_ROUTE }>Register</NavLink>
+  //       <NavLink to={REGISTER_ROUTE}>Register</NavLink>
   //       <NavLink to={LOGIN_ROUTE}>Login</NavLink>
   //     </nav>
   //   </header>
