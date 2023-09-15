@@ -1,7 +1,5 @@
 import { lazy } from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from '../components/App.module.css';
-import { useAuth } from 'redux/useAuth';
+
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
@@ -32,20 +30,4 @@ export const appRoutes = [
   },
 ];
 
-export const Navigation = () => {
-  const { isLoggedIn } = useAuth();
-
-  return (
-    <nav>
-      <NavLink className={styles.link} to="{HOME_ROUTE}">
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink className={styles.link} to="{CONTACTS_ROUTE}">
-          Phonebook
-        </NavLink>
-      )}
-    </nav>
-  );
-};
 

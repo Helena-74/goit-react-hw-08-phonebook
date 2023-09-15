@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, loginUser, updateUser, refreshUser } from './operations';
-
+import { registerUser, loginUser, updateUser, refreshUser } from '../auth/operations';
 const initialState = {
   user: { name: null, email: null },
   token: null,

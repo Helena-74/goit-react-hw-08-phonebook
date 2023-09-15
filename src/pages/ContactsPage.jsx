@@ -2,8 +2,8 @@ import React from 'react';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
-import { getError, getIsLoading } from 'redux/selectors';
 import { useSelector } from 'react-redux';
+import { getError, getIsLoading } from 'redux/contacts/selectors';
 
 const ContactsPage = () => {
   const isLoading = useSelector(getIsLoading);

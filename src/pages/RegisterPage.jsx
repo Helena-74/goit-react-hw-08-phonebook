@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { registerUser } from 'redux/operations';
+import { registerUser } from 'redux/auth/operations';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();

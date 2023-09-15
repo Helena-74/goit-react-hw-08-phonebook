@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HOME_ROUTE, CONTACTS_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, appRoutes } from 'config/routes';
-import { refreshUser } from 'redux/operations';
 import { Layout } from './Layout';
-import { useAuth } from 'redux/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { useAuth } from 'redux/auth/useAuth';
+import { refreshUser } from 'redux/auth/operations';
 // import styles from './App.module.css';
 
 const NotFound = lazy(() => import('../pages/NotFound'));
