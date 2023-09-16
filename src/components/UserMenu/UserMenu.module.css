@@ -5,12 +5,29 @@
 
 .user_menu p {
   margin-right: 10px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  padding: 10px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button_logout {
-  background-color: #dc3545;
+  text-decoration: none;
   color: #fff;
+  display: flex;
+  padding: 10px;
+  background-color: #2196f3;
   border: none;
-  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.button_logout,
+.user_menu p:hover {
+  background-color: #5812e3;
+  text-decoration: underline;
 }
