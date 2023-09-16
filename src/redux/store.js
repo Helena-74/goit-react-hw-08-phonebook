@@ -14,6 +14,7 @@ import {
   PERSIST,
   PURGE,
 } from 'redux-persist';
+
 const persistConfig = {
   key: 'contacts',
   storage,
