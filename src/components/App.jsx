@@ -15,8 +15,6 @@ import ContactsPage from 'pages/ContactsPage';
 // import { Navigation } from './Navigation/Navigation';
 // import styles from './App.module.css';
 
-// const NotFound = lazy(() => import('../pages/NotFound'));
-
 function App() {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -30,26 +28,30 @@ function App() {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage/>} />
+        <Route index element={<HomePage />} />
         <Route
           path={REGISTER_ROUTE}
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage/>} />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
           }
         />
         <Route
           path={LOGIN_ROUTE}
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage/>} />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
         <Route
           path={CONTACTS_ROUTE}
           element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage/>} />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
-        < Route path='*' element={<Navigate to="/" />} /> 
+
+        <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
   );
