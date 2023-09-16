@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
+import styles from '../components/App.module.css';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -26,28 +27,37 @@ const RegisterPage = () => {
   return (
     <div>
       <h1>RegisterPage</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={userData.name}
-          onChange={handleChange}
+      <form className={styles.register} onSubmit={handleSubmit}>
+        <label>
+          <span>Name:</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={userData.name}
+            onChange={handleChange}
         />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={userData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={userData.password}
-          onChange={handleChange}
-        />
+        </label>
+        <label>
+          <span>Email:</span>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={userData.email}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={userData.password}
+            onChange={handleChange}
+          />
+        </label>
         <button type="submit">Register</button>
       </form>
     </div>

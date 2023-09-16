@@ -30,3 +30,27 @@ justify-content: flex-end;
 .link.active {
   color: #e84a5f;
 }
+
+.register {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.register label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.register input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.register button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
