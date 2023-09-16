@@ -1,0 +1,16 @@
+.user_menu {
+  display: flex;
+  align-items: center;
+}
+
+.user_menu p {
+  margin-right: 10px;
+}
+
+.button_logout {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
