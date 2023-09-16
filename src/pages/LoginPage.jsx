@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/operations';
+import styles from '../components/App.module.css';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const LoginPage = () => {
   return (
     <div>
       <h1>LoginPage</h1>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.register} onSubmit={handleSubmit}>
         <label>
           <span>Email:</span>
           <input
