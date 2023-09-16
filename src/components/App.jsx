@@ -1,16 +1,21 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { HOME_ROUTE, CONTACTS_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, appRoutes } from 'config/routes';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { CONTACTS_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE } from 'config/routes';
 import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { useAuth } from 'redux/auth/useAuth';
 import { refreshUser } from 'redux/auth/operations';
+import HomePage from 'pages/HomePage';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
+import ContactsPage from 'pages/ContactsPage';
+// import { Navigation } from './Navigation/Navigation';
 // import styles from './App.module.css';
 
-const NotFound = lazy(() => import('../pages/NotFound'));
+// const NotFound = lazy(() => import('../pages/NotFound'));
 
 function App() {
   const dispatch = useDispatch();
@@ -25,33 +30,34 @@ function App() {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HOME_ROUTE />} />
+        <Route index element={<HomePage/>} />
         <Route
-          path="{REGISTER_ROUTE}"
+          path={REGISTER_ROUTE}
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<REGISTER_ROUTE />} />
+            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage/>} />
           }
         />
         <Route
-          path="{LOGIN_ROUTE}"
+          path={LOGIN_ROUTE}
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<LOGIN_ROUTE />} />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage/>} />
           }
         />
         <Route
-          path="{CONTACTS_ROUTE}"
+          path={CONTACTS_ROUTE}
           element={
-            <PrivateRoute redirectTo="/login" component={<CONTACTS_ROUTE />} />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage/>} />
           }
         />
-        {appRoutes.map(({path, element}) => < Route key={path} path={path} element={element} />)}
-        < Route path='*' element={<NotFound/>} /> 
+        < Route path='*' element={<Navigate to="/" />} /> 
       </Route>
     </Routes>
   );
 }
 
 export default App;
+
+
 
 // import React, { lazy } from 'react';
 // import { useDispatch } from 'react-redux';

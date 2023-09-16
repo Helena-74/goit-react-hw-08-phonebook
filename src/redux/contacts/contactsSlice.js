@@ -44,7 +44,7 @@ import { fetchContacts, addContacts, deleteContacts } from './operations';
   },
 });
 
-export const authReducer = contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
 
 
   

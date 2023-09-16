@@ -7,7 +7,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const [contact, setContact] = useState({
     name: '',
-    phone: '',
+    number: '',
   });
 
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const ContactForm = () => {
     dispatch(addContacts(contact));
     setContact({
       name: '',
-      phone: '',
+      number: '',
     });
   };
 
@@ -43,7 +43,7 @@ const ContactForm = () => {
         Number
       <input className={styles.input}
         type="text"
-        name="phone"
+        name="number"
         placeholder="Phone"
         value={contact.phone}
         onChange={handleChange}

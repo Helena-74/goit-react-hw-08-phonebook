@@ -20,13 +20,6 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const email = e.currentTarget.elements.userEmail.value;
-    const password = e.currentTarget.elements.userPassword.value;
-
-    const userData = {
-      email,
-      password,
-    };
     dispatch(loginUser(userData));
   };
 

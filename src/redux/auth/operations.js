@@ -38,18 +38,14 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const updateUser = createAsyncThunk(
-  'auth/update',
-  async (userData, thunkAPI) => {
-    try {
-      const response = await axios.patch('/users/current', userData);
-      clearAuthHeader();
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+  try {
+    await axios.post('/users/logout');
+    clearAuthHeader();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});
 
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
@@ -63,7 +59,7 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const response = await axios.get('/users/me');
+      const response = await axios.get('/users/current');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser, selectUserEmail } from 'redux/auth/authSelectors';
+import { selectUserEmail } from 'redux/auth/authSelectors';
+import { logOut } from 'redux/auth/operations';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
   const userEmail = useSelector(selectUserEmail);
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logOut());
   };
 
   return (

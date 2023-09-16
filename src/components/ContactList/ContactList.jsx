@@ -12,7 +12,7 @@ function ContactList() {
     <ul className={styles.list}>
     {contacts.map((contact) => (
       <li className={styles.li} key={contact.id}>
-        {contact.name}: {contact.phone}
+        {contact.name}: {contact.number}
         <button onClick={() => dispatch(deleteContacts(contact.id))}>
           Delete
         </button>
