@@ -36,6 +36,7 @@ const RegisterPage = () => {
             placeholder="Name"
             value={userData.name}
             onChange={handleChange}
+            required
         />
         </label>
         <label>
@@ -46,6 +47,7 @@ const RegisterPage = () => {
             placeholder="Email"
             value={userData.email}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -56,6 +58,8 @@ const RegisterPage = () => {
             placeholder="Password"
             value={userData.password}
             onChange={handleChange}
+            minLength={8}
+            required
           />
         </label>
         <button type="submit">Register</button>

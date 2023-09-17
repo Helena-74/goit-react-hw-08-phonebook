@@ -25,5 +25,3 @@ function ContactList() {
 export default ContactList;
 
 
-
-  // const contacts = useSelector(selectFilteredContacts);

@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "redux/auth/useAuth";
-// import styles from '../App.module.css';
 import styles from './Navigation.module.css';
 import { CONTACTS_ROUTE, HOME_ROUTE } from 'config/routes';
 

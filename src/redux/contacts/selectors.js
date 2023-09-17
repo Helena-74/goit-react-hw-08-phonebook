@@ -1,6 +1,4 @@
 import { createSelector } from "@reduxjs/toolkit";
-// import { useSelector } from "react-redux";
-// import { selectUser, selectIsLoggedIn, selectIsRefreshing } from 'redux/selectors';
 
 export const getContacts = state => state.contacts.items;
 export const getFilter = state => state.filter;

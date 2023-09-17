@@ -31,13 +31,3 @@ const HomePage = () => {
 export default HomePage;
 
 
-// const HomePage = () => {
-//   return (
-//     <div style={styles.container}>
-//       <h1>Welcome to Phonebook App</h1>
-//       <p >This is the home page of the Phonebook App. Please log in to access your contacts.</p>
-//     </div>
-//   );
-// };
-
-// export default HomePage;
